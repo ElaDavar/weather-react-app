@@ -1,0 +1,23 @@
+.ant-row {
+  justify-content: center;
+  text-align: center;
+}
+
+.ant-card {
+  padding: 30px;
+}
+
+@media (min-width: 1025px) {
+  .ant-row {
+    padding: 20px 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ant-row {
+    padding: 10px 0px;
+  }
+  .ant-col {
+    padding: 10px;
+  }
+}
