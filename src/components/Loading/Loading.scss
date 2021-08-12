@@ -1,0 +1,22 @@
+.Loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Show {
+  background-color: white;
+}
+
+@media (min-width: 1025px) {
+  .Show {
+    margin: 120px 140px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Show {
+    margin: 20px;
+  }
+}

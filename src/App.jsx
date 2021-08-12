@@ -1,10 +1,11 @@
-import Info from './components/info';
-import './App.css';
+import Loading from './components/Loading/Loading';
+import './App.scss';
+
 
 function App() {
   return (
     <div className="App">
-      <Info />
+      <Loading />
     </div>
   );
 }
