@@ -20,7 +20,7 @@ function Weather(props) {
   }
 
   const handleNext = () => {
-    if (props.items.list.length >= (cards + 8)) {
+    if (props.items.list.length > (cards + 8)) {
       dispatch(next(8));
     }
   }

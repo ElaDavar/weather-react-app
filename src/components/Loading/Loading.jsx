@@ -11,12 +11,10 @@ function Loading() {
   useEffect(() => {
     async function getList() {
       try {
-        let response = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=41815d12e0e531a86b8d8b0bc1b4c2f1&cnt=20");
+        let response = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40");
         response = await response.json();
         setIsLoaded(true);
         setItems(response);
-        console.log('res ', response);
-        console.log('items ', items);
       } catch (error) {
         setIsLoaded(true);
         setError(error);
