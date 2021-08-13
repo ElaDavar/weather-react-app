@@ -12,14 +12,16 @@ export const prev = num => {
   }
 };
 
-export const cel = () => {
+export const cel = temp => {
   return {
-    type: 'CELSIUS'
+    type: 'CELSIUS',
+    payload: temp
   }
 };
 
-export const fah = () => {
+export const fah = temp => {
   return {
-    type: 'FAHRENHEIT'
+    type: 'FAHRENHEIT',
+    payload: temp
   }
 };

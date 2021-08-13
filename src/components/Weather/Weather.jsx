@@ -10,6 +10,7 @@ import './Weather.scss';
 
 function Weather(props) {
 
+  console.log('items', props.items);
   const cards = useSelector(state => state.cards);
   const dispatch = useDispatch();
 
@@ -26,15 +27,9 @@ function Weather(props) {
   }
 
   const [value, setValue] = React.useState(1);
-  const [temp, setTemp] = React.useState(props.items.list[0].main.temp);
   const onChange = e => {
     setValue(e.target.value);
-    if (e.target.value === 2) {
-      setTemp(Number((props.items.list[cards].main.temp - 32) * 5/9).toFixed(2));
-    }
-    if (e.target.value === 1) {
-      setTemp(props.items.list[cards].main.temp);
-    }
+    
   };
 
   return (
@@ -63,9 +58,19 @@ function Weather(props) {
       </Row>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col>
+          {props.items.list[cards - 8] && <Card title={'Date: ' + dateFormat(props.items.list[cards - 8].dt_txt, "d mmmm yy")}>
+            {'Temp: ' + props.items.list[cards - 8].main.temp + '°'}
+          </Card>}
+        </Col>
+        <Col>
           <Card title={'Date: ' + dateFormat(props.items.list[cards].dt_txt, "d mmmm yy")}>
-            {'Temp: ' + temp}
+            {'Temp: ' + props.items.list[cards].main.temp + '°'}
           </Card>
+        </Col>
+        <Col>
+          {props.items.list[cards + 8] && <Card title={'Date: ' + dateFormat(props.items.list[cards + 8].dt_txt, "d mmmm yy")}>
+            {'Temp: ' + props.items.list[cards + 8].main.temp + '°'}
+          </Card>}
         </Col>
       </Row>
     </div>
